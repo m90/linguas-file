@@ -1,0 +1,32 @@
+{
+  "name": "linguas-file",
+  "version": "0.0.0",
+  "description": "A library for handling LINGUAS files",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "tape test/test.js",
+    "posttest": "standard",
+    "preversion": "npm test",
+    "version": "changes --commits",
+    "postversion": "git push --follow-tags && npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m90/linguas-file.git"
+  },
+  "keywords": [
+    "LINGUAS",
+    "gettext"
+  ],
+  "author": "Frederik Ring <frederik.ring@posteo.de>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/m90/linguas-file/issues"
+  },
+  "homepage": "https://github.com/m90/linguas-file#readme",
+  "devDependencies": {
+    "@studio/changes": "^2.1.0",
+    "standard": "^16.0.3",
+    "tape": "^5.2.2"
+  }
+}
