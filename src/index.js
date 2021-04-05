@@ -21,10 +21,21 @@ function parse (input) {
 
 exports.serialize = serialize
 function serialize (tokens, comment) {
-  const out = []
+  const result = tokens.reduce(function (acc, next) {
+    if (acc[acc.length - 1].join(' ').length + next.length + 1 <= 78) {
+      acc[acc.length - 1].push(next)
+    } else {
+      acc.push([next])
+    }
+    return acc
+  }, [[]])
+    .map(function (line) {
+      return line.join(' ')
+    })
+
   if (comment) {
-    out.push('# ' + comment)
+    result.unshift('# ' + comment)
   }
-  out.push(tokens.join(' '))
-  return out.join(os.EOL) + os.EOL
+
+  return result.join(os.EOL) + os.EOL
 }

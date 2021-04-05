@@ -33,3 +33,12 @@ tape.test('serialize: with comment', t => {
   t.equal(result, '# what is this even' + os.EOL + 'en fr de es' + os.EOL)
   t.end()
 })
+
+tape.test('parse and serialize', t => {
+  const result = linguasFile.serialize(
+    ['en', 'fr', 'de', 'es'], 'what is this even'
+  )
+  const tokens = linguasFile.parse(result)
+  t.deepEqual(tokens, ['en', 'fr', 'de', 'es'])
+  t.end()
+})
