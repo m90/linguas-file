@@ -1,1 +1,1 @@
-en fr de es
+pt fr de es

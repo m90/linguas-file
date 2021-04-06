@@ -25,8 +25,16 @@ This method takes a string or a buffer representing the content of a LINGUAS fil
 const fs = require('fs')
 const linguasFile = require('linguas-file')
 
+/* content of ./LINGUAS:
+
+# languages we support
+fr pt
+es de
+
+*/
+
 fs.readFile('./LINGUAS', 'utf-8', function (err, data) {
-  const tokens = linguasFile.parse(data)
+  const tokens = linguasFile.parse(data) // => ['fr', 'pt', 'es', 'de']
 })
 ```
 
@@ -40,13 +48,20 @@ This method takes an Array of tokens and an optional comment and returns a valid
 const fs = require('fs')
 const linguasFile = require('linguas-file')
 
-const languages = ['en', 'fr', 'es', 'de']
+const languages = ['pt', 'fr', 'es', 'de']
 
 const file = linguasFile.serialize(
   languages, 'we are planning to support more of these'
 )
 
 fs.writeFileSync('./LINGUAS', file)
+
+/* Content of ./LINGUAS after write:
+
+# we are planning to support more of these
+pt fr es de
+
+*/
 ```
 
 ## License
