@@ -3,8 +3,6 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-const os = require('os')
-
 exports.parse = parse
 function parse (input) {
   return input.toString('utf-8')
@@ -37,5 +35,5 @@ function serialize (tokens, comment) {
     result.unshift('# ' + comment)
   }
 
-  return result.join(os.EOL) + os.EOL
+  return result.join('\n') + '\n'
 }

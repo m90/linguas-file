@@ -1,6 +1,5 @@
 const fs = require('fs')
 const path = require('path')
-const os = require('os')
 
 const tape = require('tape')
 
@@ -22,7 +21,7 @@ tape.test('parse: complex', t => {
 
 tape.test('serialize: simple', t => {
   const result = linguasFile.serialize(['pt', 'fr', 'de', 'es'])
-  t.equal(result, 'pt fr de es' + os.EOL)
+  t.equal(result, 'pt fr de es\n')
   t.end()
 })
 
@@ -30,7 +29,7 @@ tape.test('serialize: with comment', t => {
   const result = linguasFile.serialize(
     ['pt', 'fr', 'de', 'es'], 'what is this even'
   )
-  t.equal(result, '# what is this even' + os.EOL + 'pt fr de es' + os.EOL)
+  t.equal(result, '# what is this even\npt fr de es\n')
   t.end()
 })
 
