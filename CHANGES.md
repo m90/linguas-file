@@ -1,5 +1,12 @@
 # Changes
 
+## 2.0.0
+
+- [`1aa2b89`](https://github.com/m90/linguas-file/commit/1aa2b895513a177dcfeb3ddedce757fe9ae7f597)
+  fix: always use unix style line ending
+- [`e1723c0`](https://github.com/m90/linguas-file/commit/e1723c0b7ee64e298f562000091f0cecd2f23953)
+  add file content examples to README
+
 ## 1.1.0
 
 - [`35906f5`](https://github.com/m90/linguas-file/commit/35906f5a5d24f0a6f8867a3ef459a21c2463aabd)
